@@ -16,28 +16,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.42203146">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scrap.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="390">
                   <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
                   <folding>
                     <element signature="e#498#519#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/models/scores.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="353">
-                  <caret line="149" column="41" selection-start-line="149" selection-start-column="41" selection-end-line="149" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#0#13#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -92,13 +80,25 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data_cleaning/big_clean.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-930">
                   <caret line="6" column="90" selection-start-line="6" selection-start-column="90" selection-end-line="6" selection-end-column="90" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/models/scores.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="250">
+                  <caret line="148" column="33" lean-forward="true" selection-start-line="148" selection-start-column="33" selection-end-line="148" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#13#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -227,9 +227,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13662376" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13662376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -240,7 +239,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.26466754" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34550196" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.41199479" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -389,16 +388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_cleaning/big_clean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-930">
-          <caret line="6" column="90" selection-start-line="6" selection-start-column="90" selection-end-line="6" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/line_building.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -419,10 +408,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/big_clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-930">
+          <caret line="6" column="90" selection-start-line="6" selection-start-column="90" selection-end-line="6" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/scores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="149" column="41" selection-start-line="149" selection-start-column="41" selection-end-line="149" selection-end-column="41" />
+        <state relative-caret-position="250">
+          <caret line="148" column="33" lean-forward="true" selection-start-line="148" selection-start-column="33" selection-end-line="148" selection-end-column="33" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
