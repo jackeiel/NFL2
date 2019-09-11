@@ -137,8 +137,24 @@ class ScorePrediction:
         self.home_prediction = fit.predict(self.home_projections[features])[0]
         self.away_prediction = fit.predict(self.away_projections[features])[0]
 
-        return pd.DataFrame(data={'team':[self.home_team, self.away_team],
-                                  'predicted_score':[self.home_prediction, self.away_prediction],
-                                  'predicted_spread':[self.away_prediction-self.home_prediction,
-                                            self.home_prediction-self.away_prediction],
+        return pd.DataFrame(data={'home_team':self.home_team, 'away_team': self.away_team,
+                                  'predicted_home_score':self.home_prediction,
+                                  'predicted_away_score':self.away_prediction,
+                                  'predicted_spread':self.home_prediction-self.away_prediction,
                                   'model':key})
+
+    def fill_predictions(self, week):
+        self.week = week
+        path = './DATA/Results/game_scores.csv'
+        games = pd.read_csv(path)
+        week_games = games[games.week == int(self.week)]
+        print('predicting games')
+        week_games[['predicted_home_score', 'predicted_away_score', 'predicted_spread']] = \
+            week_games.apply(self.get_predictions(week_games.home_team, week_games.away_team)[['predicted_home_score',
+                                                                              'predicted_away_score',
+                                                                              'predicted_spread']],
+                             axis=1)
+        week_games.to_csv('../DATA/Results/Predictions_Week_'+str(self.week))
+        print('DONE')
+
+

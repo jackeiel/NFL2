@@ -4,10 +4,10 @@ import numpy as np
 
 def big_clean(path):
     '''
-    :param path: csv file path to a csv file scrapped by ryurko for nflscrapR
+    :param path: csv file path to a csv file for play_by_play data scrapped by ryurko with nflscrapR
     :return: cleaned, aggregated dataframe where each row is a team's performance in a game
     '''
-    data = path # pd.read_csv(path, low_memory=False)
+    data = pd.read_csv(path, low_memory=False)
 
     non_id = [col for col in data.columns if 'player' not in col]
     data = data[non_id]

@@ -10,7 +10,7 @@ Run in shell:
 
 `>>>guess = ScorePrediction()`
 
-`>>>guess.get_predictions(home_team, away_team`
+`>>>guess.get_predictions(home_team, away_team)`
 
 home_team and away_team are team city abbreviations, listed in scores.py and here:
 

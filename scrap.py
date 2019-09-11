@@ -24,4 +24,4 @@ import pandas as pd
 
 from models.scores import ScorePrediction
 guess = ScorePrediction()
-print(guess.get_predictions('NE', 'PIT'))
+guess.fill_predictions(1)
