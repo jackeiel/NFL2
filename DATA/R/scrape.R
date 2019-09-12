@@ -9,5 +9,6 @@ pbp = data.frame()
 for (game in week_games$game_id){
 pbp = rbind(pbp, scrape_game_play_by_play(game, 'reg', 2019))
 }
-
-write.csv(pbp, '../play_by_play_data/regular_season/reg_pbp_2019.csv')
+name = paste('../play_by_play_data/regular_season/2019/pbp_week_', week)
+name = paste(name,'.csv')
+write.csv(pbp, name)
