@@ -4,14 +4,21 @@ from models.scores import ScorePrediction
 
 
 def fill_predictions(week):
-    path = '../DATA/Results/game_scores'
+    path = './DATA/Results/game_scores.csv'
     games = pd.read_csv(path)
     week_games = games[games.week == int(week)]
     guess = ScorePrediction()
     print('predicting games')
-    week_games[['predicted_home_score', 'predicted_away_score', 'predicted_spread']] = \
-        week_games.apply(guess.get_predictions, home_team=week_games.home_team,
-                         away_team=week_games.away_team, axis=1)[['predicted_home_score', 'predicted_away_score',
-                                                                  'predicted_spread']]
-    week_games.to_csv('../DATA/Results/Predictions_Week_' + str(self.week))
+
+    printout = pd.concat([guess.get_predictions(home, away) for (home, away) in
+                          zip(week_games.home_team, week_games.away_team)])
+    printout.index = range(0,16)
+    print(printout)
+
+    week_games['predicted_home_score'] = printout['predicted_home_score']
+    week_games['predicted_away_score'] = printout['predicted_away_score']
+    week_games['predicted_spread'] = printout['predicted_spread']
+
+    week_games.to_csv('./DATA/Results/Predictions_Week_' + str(week)+'.csv')
+
     print('DONE')
