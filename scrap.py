@@ -22,6 +22,5 @@ import pandas as pd
 # data.to_csv('./DATA/master/NFL.csv')
 # print('Done with Cleaning')
 
-from models.scores import ScorePrediction
-guess = ScorePrediction()
-guess.fill_predictions(1)
+from models import fill
+fill.fill_predictions(1)
