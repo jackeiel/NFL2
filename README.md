@@ -1,5 +1,9 @@
 #### NFL Score Predictions
 
+Weekly pick found in ./DATA/Results
+
+Week 2 Picks Available 
+
 Run on command line
 
 `pipenv install`
