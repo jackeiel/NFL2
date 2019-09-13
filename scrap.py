@@ -1,12 +1,3 @@
-# from data_cleaning import clean
-
-# cleans all regular season and post season game data from 2009 onward
-# for year in range(2009, 2019):
-#     clean.agg_plays('./DATA/play_by_play_data/regular_season/reg_pbp_'+str(year)+'.csv',
-#                     './DATA/games_data/regular_season/reg_games_'+str(year)+'.csv')
-#     clean.agg_plays('./DATA/play_by_play_data/post_season/post_pbp_' + str(year) + '.csv',
-#                     './DATA/games_data/post_season/post_games_' + str(year) + '.csv')
-
 from glob import glob
 import pandas as pd
 
@@ -22,5 +13,11 @@ import pandas as pd
 # data.to_csv('./DATA/master/NFL.csv')
 # print('Done with Cleaning')
 
+# from models import fill
+# fill.fill_predictions(1)
+
+# from data_cleaning import weekly_cleaning
+# weekly_cleaning.weekly_clean(1)
+
 from models import fill
-fill.fill_predictions(1)
+fill.fill_predictions(2)

@@ -15,9 +15,9 @@ def fill_predictions(week):
     printout.index = range(0,16)
     print(printout)
 
-    week_games['predicted_home_score'] = printout['predicted_home_score']
-    week_games['predicted_away_score'] = printout['predicted_away_score']
-    week_games['predicted_spread'] = printout['predicted_spread']
+    week_games.loc[:,'predicted_home_score'] = printout['predicted_home_score'].values
+    week_games.loc[:,'predicted_away_score'] = printout['predicted_away_score'].values
+    week_games.loc[:,'predicted_spread'] = printout['predicted_spread'].values
 
     week_games.to_csv('./DATA/Results/Predictions_Week_' + str(week)+'.csv')
 

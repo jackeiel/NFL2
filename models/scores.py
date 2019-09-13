@@ -140,5 +140,5 @@ class ScorePrediction:
         return pd.DataFrame(data={'home_team':self.home_team, 'away_team': self.away_team,
                                   'predicted_home_score':self.home_prediction,
                                   'predicted_away_score':self.away_prediction,
-                                  'predicted_spread':self.home_prediction-self.away_prediction,
+                                  'predicted_spread':self.away_prediction-self.home_prediction,
                                   'model':key}, index=range(0,1))
