@@ -12,7 +12,7 @@ def big_clean(df):
     non_id = [col for col in data.columns if 'player' not in col]
     data = data[non_id]
 
-    data['game_date'] = pd.to_datetime(data.game_date)
+    # data['game_date'] = pd.to_datetime(data.game_date)
     to_drop = ['play_id', 'desc', 'yrdln', 'play_type', 'pass_location', 'run_location', 'run_gap', 'timeout_team',
                'solo_tackle_1_team', 'solo_tackle_2_team', 'assist_tackle_1_team', 'assist_tackle_2_team',
                'fumbled_1_team', 'fumbled_2_team', 'fumble_recovery_2_team', 'return_team', 'penalty_team',

@@ -28,7 +28,7 @@ def home(row):
         return 0
 
 
-df['home'] = df[['team', 'home_team']].apply(home, axis=1)
+# df['home'] = df[['team', 'home_team']].apply(home, axis=1)
 
 score_vars = ['sp', 'total_home_score', 'total_away_score', 'touchdown', 'pass_touchdown', 'rush_touchdown',
              'extra_point_attempt', 'two_point_attempt', 'field_goal_attempt', 'field_goal_result',
@@ -54,8 +54,7 @@ noise = ['shotgun', 'qb_dropback', 'third_down_converted', 'third_down_failed',
         'no_huddle', 'penalty', 'pass_length', 'penalty_yards']
 df = df.drop(noise, axis=1)
 
-identifiers = ['home_team', 'away_team', 'team', 'opponent', 'team_score', 'game_date'] #also included spread as its our target
-
+identifiers = ['home_team', 'away_team', 'team', 'opponent', 'team_score', 'game_date']
 data = df.drop(identifiers, axis=1)
 data = data.fillna(0)
 
@@ -64,6 +63,7 @@ xtrain, xtest, ytrain, ytest = train_test_split(data, df.team_score,
 lm = LinearRegression()
 lm.fit(xtrain, ytrain)
 
-s = shelve.open('./models/model1')
-s['model2'] = lm
+s = shelve.open('./models/models')
+s['model1'] = lm
 s.close()
+print('model created')
