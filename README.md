@@ -1,20 +1,18 @@
-#### NFL Score Predictions
+### NFL Score Predictions
 
 Weekly pick found in ./DATA/Results
 
-Week 2 Picks Available 
+Week 3 Picks Available 
 
-Run on command line
+#### Record
+**Overall** 
 
-`pipenv install`
 
-Run in shell:
+*Week 2* 
 
-`>>>from models.scores import ScorePrediction`
+*Week 1*
 
-`>>>guess = ScorePrediction()`
 
-`>>>guess.get_predictions(home_team, away_team)`
 
 home_team and away_team are team city abbreviations, listed in scores.py and here:
 
