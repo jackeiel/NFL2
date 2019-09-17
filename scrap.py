@@ -19,5 +19,17 @@ import pandas as pd
 # from data_cleaning import weekly_cleaning
 # weekly_cleaning.weekly_clean(1)
 
+# from models import fill
+# fill.fill_predictions(2)
+
+''' Let's turn scrap.py from a throwaway into the method to do weekly data gathering, cleaning, filling of 
+last weeks scores, and next weeks predictions'''
+
+# first this is running the r script to gather last weeks play by play data, and save it
+from data_cleaning.weekly_cleaning import weekly_clean
 from models import fill
-fill.fill_predictions(2)
+
+def auto(week):
+    weekly_clean(int(week))
+    fill.fill_predictions(int(week)+1)
+
