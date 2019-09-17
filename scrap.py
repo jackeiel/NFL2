@@ -30,6 +30,7 @@ from data_cleaning.weekly_cleaning import weekly_clean
 from models import fill
 
 def auto(week):
-    weekly_clean(int(week))
-    fill.fill_predictions(int(week)+1)
+    weekly_clean(int(week)-1)
+    fill.fill_predictions(int(week))
+    print('done')
 
