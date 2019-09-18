@@ -37,6 +37,9 @@ def auto(week):
     print('done')
 
 
+from models.scores import ScorePrediction
+guess = ScorePrediction()
+print(guess.get_predictions('CAR','TB'))
 
 '''
 install sklear 0.21.3
