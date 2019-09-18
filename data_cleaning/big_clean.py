@@ -27,7 +27,7 @@ def big_clean(df):
         else:
             return np.nan
 
-    data['pass_length'] = data.pass_length.apply(passes)
+    data.loc[:,'pass_length'] = data.pass_length.apply(passes)
 
     def field_goal(x):
         if x == 'good':
@@ -39,7 +39,7 @@ def big_clean(df):
         else:
             return np.nan
 
-    data['field_goal_result'] = data.field_goal_result.apply(field_goal)
+    data.loc[:,'field_goal_result'] = data.field_goal_result.apply(field_goal)
 
     def extra_point(x):
         if x == 'good':
@@ -51,7 +51,7 @@ def big_clean(df):
         else:
             return np.nan
 
-    data['extra_point_result'] = data.extra_point_result.apply(extra_point)
+    data.loc[:,'extra_point_result'] = data.extra_point_result.apply(extra_point)
 
     def two_point(x):
         if x == 'success':
@@ -61,7 +61,7 @@ def big_clean(df):
         else:
             return np.nan
 
-    data['two_point_conv_result'] = data.two_point_conv_result.apply(two_point)
+    data.loc[:,'two_point_conv_result'] = data.two_point_conv_result.apply(two_point)
     data = data.drop(to_drop, axis=1)
 
     def deep_pass_attempt(x):
@@ -76,8 +76,8 @@ def big_clean(df):
         else:
             return 0
 
-    data['deep_pass_attempt'] = data.pass_length.apply(deep_pass_attempt)
-    data['short_pass_attempt'] = data.pass_length.apply(short_pass_attempt)
+    data.loc[:,'deep_pass_attempt'] = data.pass_length.apply(deep_pass_attempt)
+    data.loc[:,'short_pass_attempt'] = data.pass_length.apply(short_pass_attempt)
 
     def deep_pass_complete(df):
         if df['pass_length'] == 2:
@@ -97,8 +97,8 @@ def big_clean(df):
             else:
                 return np.nan
 
-    data['deep_pass_complete'] = data[['pass_length', 'complete_pass']].apply(deep_pass_complete, axis=1)
-    data['short_pass_complete'] = data[['pass_length', 'complete_pass']].apply(short_pass_complete, axis=1)
+    data.loc[:,'deep_pass_complete'] = data[['pass_length', 'complete_pass']].apply(deep_pass_complete, axis=1)
+    data.loc[:,'short_pass_complete'] = data[['pass_length', 'complete_pass']].apply(short_pass_complete, axis=1)
 
     # deep pass yards
     def deep_pass_yards(df):
@@ -121,9 +121,9 @@ def big_clean(df):
         else:
             return np.nan
 
-    data['deep_pass_yards'] = data[['deep_pass_complete', 'yards_gained']].apply(deep_pass_yards, axis=1)
-    data['short_pass_yards'] = data[['short_pass_complete', 'yards_gained']].apply(short_pass_yards, axis=1)
-    data['rush_yards'] = data[['rush_attempt', 'yards_gained']].apply(rush_yards, axis=1)
+    data.loc[:,'deep_pass_yards'] = data[['deep_pass_complete', 'yards_gained']].apply(deep_pass_yards, axis=1)
+    data.loc[:,'short_pass_yards'] = data[['short_pass_complete', 'yards_gained']].apply(short_pass_yards, axis=1)
+    data.loc[:,'rush_yards'] = data[['rush_attempt', 'yards_gained']].apply(rush_yards, axis=1)
 
     more_drop_vars = [col for col in data.columns if 'epa' in col or 'wp' in col]
     data = data.drop(more_drop_vars, axis=1)
@@ -136,15 +136,15 @@ def big_clean(df):
 
     agg_num_data = num_data.groupby(['game_id', 'posteam', 'game_date']).agg(np.sum)
 
-    agg_num_data['drive'] = num_data.groupby(['game_id', 'posteam', 'game_date'])['drive'].agg(np.max)
-    agg_num_data['total_home_score'] = num_data.groupby(['game_id', 'posteam',
+    agg_num_data.loc[:,'drive'] = num_data.groupby(['game_id', 'posteam', 'game_date'])['drive'].agg(np.max)
+    agg_num_data.loc[:,'total_home_score'] = num_data.groupby(['game_id', 'posteam',
                                                          'game_date'])['total_home_score'].agg(np.max)
-    agg_num_data['total_away_score'] = num_data.groupby(['game_id', 'posteam',
+    agg_num_data.loc[:,'total_away_score'] = num_data.groupby(['game_id', 'posteam',
                                                          'game_date'])['total_away_score'].agg(np.max)
-    agg_num_data['team'] = agg_num_data.index.droplevel(['game_id', 'game_date'])
-    agg_num_data['total_plays'] = agg_num_data.pass_attempt + agg_num_data.rush_attempt
-    agg_num_data['home_team'] = data.groupby(['game_id', 'posteam', 'game_date'])['home_team'].first()
-    agg_num_data['away_team'] = data.groupby(['game_id', 'posteam', 'game_date'])['away_team'].first()
+    agg_num_data.loc[:,'team'] = agg_num_data.index.droplevel(['game_id', 'game_date'])
+    agg_num_data.loc[:,'total_plays'] = agg_num_data.pass_attempt + agg_num_data.rush_attempt
+    agg_num_data.loc[:,'home_team'] = data.groupby(['game_id', 'posteam', 'game_date'])['home_team'].first()
+    agg_num_data.loc[:,'away_team'] = data.groupby(['game_id', 'posteam', 'game_date'])['away_team'].first()
 
     def win(row):
         if row['team'] == row['home_team']:
@@ -161,7 +161,7 @@ def big_clean(df):
             # if tie, return 0
             return 0
 
-    agg_num_data['win'] = agg_num_data.apply(win, axis=1)
+    agg_num_data.loc[:,'win'] = agg_num_data.apply(win, axis=1)
 
     def opp(row):
         if row['team'] == row['home_team']:
@@ -181,9 +181,9 @@ def big_clean(df):
         else:
             return 0
 
-    agg_num_data['team_score'] = agg_num_data.apply(team_score, axis=1)
+    agg_num_data.loc[:,'team_score'] = agg_num_data.apply(team_score, axis=1)
 
-    agg_num_data['opponent'] = agg_num_data.apply(opp, axis=1)
+    agg_num_data.loc[:,'opponent'] = agg_num_data.apply(opp, axis=1)
 
     agg_num_data.index = agg_num_data.index.droplevel(['game_id', 'posteam'])
 
@@ -194,16 +194,16 @@ def big_clean(df):
     useless_sums.extend([col for col in agg_num_data.columns if 'prob' in col])
     df = agg_num_data.drop(useless_sums, axis=1)
 
-    df['third_down_perc'] = df.third_down_converted / (df.third_down_converted + df.third_down_failed)
-    df['fourth_down_perc'] = df.fourth_down_converted / (df.fourth_down_converted + df.fourth_down_failed)
-    df['pass_perc'] = df.complete_pass / (df.complete_pass + df.incomplete_pass)
-    df['spread'] = df.total_home_score - df.total_away_score
-    df['yards_per_deep_pass'] = df.deep_pass_yards / df.deep_pass_attempt
-    df['yards_per_rush'] = df.rush_yards / df.rush_attempt
-    df['yards_per_short_pass'] = df.short_pass_yards / df.short_pass_attempt
-    df['yards_per_play'] = df.yards_gained / df.total_plays
+    df.loc[:,'third_down_perc'] = df.third_down_converted / (df.third_down_converted + df.third_down_failed)
+    df.loc[:,'fourth_down_perc'] = df.fourth_down_converted / (df.fourth_down_converted + df.fourth_down_failed)
+    df.loc[:,'pass_perc'] = df.complete_pass / (df.complete_pass + df.incomplete_pass)
+    df.loc[:,'spread'] = df.total_home_score - df.total_away_score
+    df.loc[:,'yards_per_deep_pass'] = df.deep_pass_yards / df.deep_pass_attempt
+    df.loc[:,'yards_per_rush'] = df.rush_yards / df.rush_attempt
+    df.loc[:,'yards_per_short_pass'] = df.short_pass_yards / df.short_pass_attempt
+    df.loc[:,'yards_per_play'] = df.yards_gained / df.total_plays
 
-    df['home'] = df.apply(home, axis=1)
+    df.loc[:,'home'] = df.apply(home, axis=1)
 
     df = df.drop(['touchback'], axis=1)
 
