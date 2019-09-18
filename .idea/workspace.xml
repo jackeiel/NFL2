@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baf91cd2-7822-4e6a-9ec5-5360cf3bc519" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA/EDA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/EDA/EDA.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model1_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model1_build.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/scores.py" afterDir="false" />
-    </list>
+    <list default="true" id="baf91cd2-7822-4e6a-9ec5-5360cf3bc519" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/models/model1_build.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
-              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -78,10 +72,10 @@
         <entry file="file://$PROJECT_DIR$/models/scores.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
-              <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+              <caret line="144" selection-start-line="144" selection-end-line="144" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1568839135759" expanded="true" signature="2972:3007" ph="..." />
+                <marker date="1568839473961" expanded="true" signature="2972:3007" ph="..." />
               </folding>
             </state>
           </provider>
@@ -430,10 +424,10 @@
     <entry file="file://$PROJECT_DIR$/models/scores.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
-          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1568839135759" expanded="true" signature="2972:3007" ph="..." />
+            <marker date="1568839473961" expanded="true" signature="2972:3007" ph="..." />
           </folding>
         </state>
       </provider>
@@ -451,7 +445,7 @@
     <entry file="file://$PROJECT_DIR$/models/model1_build.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
-          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
