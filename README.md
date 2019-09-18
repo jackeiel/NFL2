@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### NFL Score Predictions
 
 
@@ -6,7 +5,7 @@ Weekly pick found in ./DATA/Results
 
 Week 3 Picks Available 
 
-<<<<<<< HEAD
+
 #### Record
 **Overall** 
 
