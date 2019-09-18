@@ -36,3 +36,14 @@ def auto(week):
     fill.fill_predictions(int(week))
     print('done')
 
+
+
+'''
+install sklear 0.21.3
+rebuild model in proper env (do everything in the env from now on ya idiot)
+make week 1 predictions
+run weekly cleaning for week 1
+make week 2 predictions
+run weekly cleaning for week 2
+make week 3 predictions
+'''

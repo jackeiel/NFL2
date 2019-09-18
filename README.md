@@ -1,14 +1,27 @@
 #### NFL Score Predictions
+An app for predicting future scores to football games. 
+
 
 Weekly pick found in ./DATA/Results
 
 Week 2 Picks Available 
 
+
+
+The app relies on an external R script to gather play by play data every week. 
+A comprehensive script is being written to handle weekly updates smoothly.
+
+For the time being
+`$ Rscript ./DATA/R/scrape.R`
+will gather data from the week specified (must go into script and edit week variable)
+
+
+
 Run on command line
 
 `pipenv install`
 
-Run in shell:
+After cloning/forking, run in shell:
 
 `>>>from models.scores import ScorePrediction`
 

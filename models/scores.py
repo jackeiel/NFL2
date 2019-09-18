@@ -130,7 +130,7 @@ class ScorePrediction:
         self.away_projections = pd.DataFrame(data=away_projections.mean()).transpose()
         self.away_projections[['home']] = 0
 
-        db = shelve.open('./models/model1')
+        db = shelve.open('./models/models')
         key = 'model1'
         fit = db[key]
 
