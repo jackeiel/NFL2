@@ -1,14 +1,27 @@
+<<<<<<< HEAD
 ### NFL Score Predictions
+
 
 Weekly pick found in ./DATA/Results
 
 Week 3 Picks Available 
 
+<<<<<<< HEAD
 #### Record
 **Overall** 
 
 
-*Week 2* 
+The app relies on an external R script to gather play by play data every week. 
+A comprehensive script is being written to handle weekly updates smoothly.
+
+For the time being
+`$ Rscript ./DATA/R/scrape.R`
+will gather data from the week specified (must go into script and edit week variable)
+
+
+
+Run on command line
+
 
 *Week 1*
 

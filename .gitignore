@@ -2,4 +2,6 @@
 /DATA/games_data
 /DATA/roster_data
 
-.idea
+.idea/*
+
+__pycache__/*
