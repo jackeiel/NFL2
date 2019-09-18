@@ -46,4 +46,5 @@ def model1():
                                                    test_size=0.30)
     lm = LinearRegression()
     lm.fit(xtrain, ytrain)
-    return lm
+    with shelve.open('./models/model1') as db:
+        db['model1'] = lm
