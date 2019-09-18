@@ -194,9 +194,9 @@ def big_clean(df):
     useless_sums.extend([col for col in agg_num_data.columns if 'prob' in col])
     df = agg_num_data.drop(useless_sums, axis=1)
 
-    df['third_down_perc'] = df.third_down_converted / sum(df.third_down_converted, df.third_down_failed)
-    df['fourth_down_perc'] = df.fourth_down_converted / sum(df.fourth_down_converted, df.fourth_down_failed)
-    df['pass_perc'] = df.complete_pass / sum(df.complete_pass, df.incomplete_pass)
+    df['third_down_perc'] = df.third_down_converted / (df.third_down_converted + df.third_down_failed)
+    df['fourth_down_perc'] = df.fourth_down_converted / (df.fourth_down_converted + df.fourth_down_failed)
+    df['pass_perc'] = df.complete_pass / (df.complete_pass + df.incomplete_pass)
     df['spread'] = df.total_home_score - df.total_away_score
     df['yards_per_deep_pass'] = df.deep_pass_yards / df.deep_pass_attempt
     df['yards_per_rush'] = df.rush_yards / df.rush_attempt
