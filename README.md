@@ -1,12 +1,16 @@
 #### NFL Score Predictions
 An app for predicting future scores to football games. 
 
-
 Weekly pick found in ./DATA/Results
+Week 3 Pick Available
 
-Week 2 Picks Available 
 
-
+**Overvall for 2019 Season**
+20 - 11
+*Week 2*
+9 - 6 (excluded NYJ game w/ Darnold out)
+*Week 1*
+11 - 5
 
 The app relies on an external R script to gather play by play data every week. 
 A comprehensive script is being written to handle weekly updates smoothly.
@@ -20,6 +24,7 @@ will gather data from the week specified (must go into script and edit week vari
 Run on command line
 
 `pipenv install`
+`pipenv shell`
 
 After cloning/forking, run in shell:
 
