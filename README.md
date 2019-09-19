@@ -5,18 +5,15 @@ Weekly pick found in ./DATA/Results
 Week 3 Picks Available 
 
 
-#### Record
-**Overall** 
-
-Week 3 Picks Available
-
-
-**Overvall for 2019 Season**
-20 - 11
-*Week 2*
-9 - 6 (excluded NYJ game w/ Darnold out)
-*Week 1*
-11 - 5
+#### Record  
+Week 3 Picks Available  
+  
+**Overvall for 2019 Season**  
+20 - 11  
+*Week 2*  
+9 - 6 (excluded NYJ game w/ Darnold out)  
+*Week 1*  
+11 - 5  
 
 The app relies on an external R script to gather play by play data every week. 
 A comprehensive script is being written to handle weekly updates smoothly.
