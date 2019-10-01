@@ -14,3 +14,12 @@ import pandas as pd
 
 # basically this is a scraper and compiler
 # need to find a good site to pull lines / over under from...
+
+def bets(week):
+    new = pd.read_csv(f'./DATA/Results/Predictions_Week_{week}.csv')
+    actual_scores = pd.read_csv('./DATA/master/NFL.csv')
+
+    # pull latest scores based on teams in predictions
+    def pull_home_score(row):
+        new =
+        return row['home_score']
