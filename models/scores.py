@@ -140,7 +140,7 @@ class ScorePrediction:
         self.away_projections = away_projections
 
         with shelve.open('./models/model1') as db:
-            key = 'model1'
+            key = 'model2'
             fit = db[key]
 
             self.home_prediction = fit.predict(home_projections)[0]
