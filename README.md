@@ -2,32 +2,27 @@
 
 Weekly pick found in ./DATA/Results
 
-Week 3 Picks Available 
-
-
 #### Record  
 Week 3 Picks Available  
   
-**Overvall for 2019 Season**  
+**Overvall for 2019 Season (through Week 2)**  
 20 - 11  
 *Week 2*  
 9 - 6 (excluded NYJ game w/ Darnold out)  
 *Week 1*  
 11 - 5  
 
-The app relies on an external R script to gather play by play data every week. 
-A comprehensive script is being written to handle weekly updates smoothly.
+For current predictions: 
 
-For the time being
-`$ Rscript ./DATA/R/scrape.R`
-will gather data from the week specified (must go into script and edit week variable)
+Run
 
+`$ pipenv install`  
+`$ pipenv shell`  
+`$ python`  
 
-
-Run on command line
-
-`pipenv install`
-`pipenv shell`
+`>>> from models.scores import ScorePrediction`  
+`>>> guess = ScorePrediction()`  
+`>>> guess.get_predictions(home_team='DAL', away_team='GB')`
 
 
 
