@@ -13,22 +13,23 @@ def fill_predictions(week):
 
     printout = pd.concat([guess.get_predictions(home, away) for (home, away) in
                           zip(week_games.home_team, week_games.away_team)])
+
     printout.index = range(0,len(week_games))
     print(printout)
 
     week_games.loc[:,'predicted_home_score'] = printout['predicted_home_score'].values
-    week_games.loc[:,'predicted_away_score'] = printout['predicted_away_score'].values
-    week_games.loc[:,'predicted_spread'] = printout['predicted_spread'].values
+    week_games.loc[:,'predicted_away_score'] = printout.loc[:, 'predicted_away_score'].values
+    week_games.loc[:,'predicted_spread'] = printout.loc[:, 'predicted_spread'].values
 
-    week_games = week_games[['game_id', 'week', 'home_team', 'predicted_home_score', 'away_team',
-                             'predicted_away_score', 'predicted_spread']]
+    week_games = week_games.loc[:,['game_id', 'week', 'home_team', 'predicted_home_score', 'away_team',
+                                   'predicted_away_score', 'predicted_spread']]
 
     # retrieve Ceasar spread/odds
     vegas_lines = gather.get_lines()
 
-    week_games.merge(vegas_lines, how='inner', on=['home_team', 'away_team',
+    new = week_games.merge(vegas_lines, how='left', on=['home_team', 'away_team',
                                                    'week'])
 
-    week_games.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
+    new.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
 
     print('DONE')
