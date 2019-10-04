@@ -4,7 +4,7 @@ from models.scores import ScorePrediction
 
 
 def fill_predictions(week):
-    path = './DATA/Results/game_scores.csv'
+    path = './DATA/Predictions/game_scores.csv'
     games = pd.read_csv(path)
     week_games = games[games.week == int(week)]
     guess = ScorePrediction()
@@ -19,9 +19,9 @@ def fill_predictions(week):
     week_games.loc[:,'predicted_away_score'] = printout['predicted_away_score'].values
     week_games.loc[:,'predicted_spread'] = printout['predicted_spread'].values
 
-    week_games = week_games[['home_team','predicted_home_score','away_team',
-                             'predicted_away_score','predicted_spread']]
+    week_games = week_games[['game_id', 'week', 'home_team', 'predicted_home_score', 'away_team',
+                             'predicted_away_score', 'predicted_spread']]
 
-    week_games.to_csv('./DATA/Results/Predictions_Week_' + str(week)+'.csv')
+    week_games.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
 
     print('DONE')
