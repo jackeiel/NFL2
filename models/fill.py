@@ -1,6 +1,7 @@
 import pandas as pd
 
 from models.scores import ScorePrediction
+from data_cleaning import gather
 
 
 def fill_predictions(week):
@@ -21,6 +22,12 @@ def fill_predictions(week):
 
     week_games = week_games[['game_id', 'week', 'home_team', 'predicted_home_score', 'away_team',
                              'predicted_away_score', 'predicted_spread']]
+
+    # retrieve Ceasar spread/odds
+    vegas_lines = gather.get_lines()
+
+    week_games.merge(vegas_lines, how='inner', on=['home_team', 'away_team',
+                                                   'week'])
 
     week_games.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
 
