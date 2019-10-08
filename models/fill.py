@@ -30,6 +30,13 @@ def fill_predictions(week):
     new = week_games.merge(vegas_lines, how='left', on=['home_team', 'away_team',
                                                    'week'])
 
+    #TODO implement 'bet' algo
+
     new.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
 
     print('DONE')
+
+def fill_bets(df_predictions):
+    # take a df... will have to read in the latest predictions
+    # use algo on desk at home...
+    pass
