@@ -31,12 +31,20 @@ def fill_predictions(week):
                                                    'week'])
 
     #TODO implement 'bet' algo
+    new['bets'] = new.apply(fill_bets(new))
 
     new.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
 
     print('DONE')
 
-def fill_bets(df_predictions):
+def fill_bets(df):
     # take a df... will have to read in the latest predictions
     # use algo on desk at home...
-    pass
+    if abs(abs(df.predicted_spread) - abs(df.vegas_line_home)) >= 2.5:
+        if df.predicted_home_score + df.vegas_line_home > df.predicted_away_score:
+            return f'{df.home_team}'
+        else:
+            return f'{df.away_team}'
+
+    else:
+        return '--'

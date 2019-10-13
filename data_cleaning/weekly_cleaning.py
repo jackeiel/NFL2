@@ -19,4 +19,39 @@ def weekly_clean(week):
     new_master.to_csv('./DATA/master/NFL.csv')
 
 
-#Everything should work now. Just need to re-init full NFL
+def evaluate(week):
+    def to_date(string):
+        el = string.astype(str)
+        return '-'.join([el[:4], el[4:6], el[6:8]])
+
+    weeks_predictions = pd.read_csv(f'DATA/Predictions/Predictions_Week_{week}.csv')
+    weeks_predictions['game_date'] = pd.to_datetime(weeks_predictions.game_id.apply(to_date))
+
+    full = pd.read_csv('DATA/master/NFL.csv', parse_dates='game_date')
+
+    # gives us one row per game (instead of one row for each team)
+    sub = full[full.home_team==full.team,['game_date', 'home_team', 'away_team', 'total_home_score',
+                                          'total_away_score', 'team', 'team_score', 'opponent']]
+
+    joined = pd.merge(weeks_predictions, sub, on=['game_date','home_team','away_team'])
+
+    # TODO apply a win or not function, write to results folder
+    def win_lose(df):
+        if df.bets == df.home_team:
+            if df.total_home_score + df.vegas_line_home > df.total_away_score:
+                return 1
+            else:
+                return 0
+        if df.bets == df.home_team:
+            if df.total_home_score + df.vegas_line_home < df.total_away_score:
+                return 1
+            else:
+                return 0
+
+
+    return joined
+
+
+
+
+
