@@ -40,7 +40,7 @@ def fill_predictions(week):
 def fill_bets(df):
     # take a df... will have to read in the latest predictions
     # use algo on desk at home...
-    if abs(abs(df.predicted_spread) - abs(df.vegas_line_home)) >= 2.5:
+    if abs(df.predicted_spread - df.vegas_line_home) >= 2.5:
         if df.predicted_home_score + df.vegas_line_home > df.predicted_away_score:
             return f'{df.home_team}'
         else:

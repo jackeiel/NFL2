@@ -23,9 +23,8 @@ def auto(week):
     fill.fill_predictions(int(week))
     print('done')
 
-weeks = [1, 2, 3, 4, 5, 6]
-
 def write_bets():
+    weeks = [1, 2, 3, 4, 5, 6]
     for week in weeks:
         df = pd.read_csv(f'DATA/Predictions/Predictions_Week_{week}.csv')
         df['bets'] = df.apply(fill.fill_bets, axis=1)
