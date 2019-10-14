@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 from models.scores import ScorePrediction
 from data_cleaning import gather
@@ -48,3 +49,18 @@ def fill_bets(df):
 
     else:
         return '--'
+
+def write_results(week):
+    # read in results df
+    result = pd.read_csv(f'DATA/Results/Week_{week}.csv', index_col=0)
+    total = result.win_bet.count()
+    wins = result.win_bet.sum()
+
+    totals = pd.read_csv('DATA/Results/totals.csv', index_col=0)
+
+
+    row = pd.Series([week, wins, total, wins / total, 0])
+    totals.loc[week] = row.values
+    totals.loc[week, 'overall_win_perc'] = totals.win_perc.mean()
+
+    totals.to_csv('DATA/Results/totals.csv')
