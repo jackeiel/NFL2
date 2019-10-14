@@ -33,7 +33,7 @@ def evaluate(week):
     sub = full.loc[full.home_team == full.team,['game_date', 'home_team', 'away_team', 'total_home_score',
                                             'total_away_score', 'team', 'team_score', 'opponent']]
 
-    joined = weeks_predictions.merge(sub, on=['game_date'])
+    joined = weeks_predictions.merge(sub, on=['game_date','home_team','away_team'])
 
     # TODO apply a win or not function, write to results folder
     def win_lose(df):
@@ -42,14 +42,20 @@ def evaluate(week):
                 return 1
             else:
                 return 0
-        if df.bets == df.home_team:
+        if df.bets == df.away_team:
             if df.total_home_score + df.vegas_line_home < df.total_away_score:
                 return 1
             else:
                 return 0
 
+    joined['win_bet'] = joined.apply(win_lose, axis=1)
 
-    return sub
+    final = joined[['game_id','game_date', 'week', 'home_team',
+       'predicted_home_score', 'away_team', 'predicted_away_score',
+       'predicted_spread', 'vegas_line_home', 'bets',
+       'total_home_score', 'total_away_score', 'win_bet']]
+
+    final.to_csv(f'DATA/Results/Week_{week}.csv')
 
 
 
