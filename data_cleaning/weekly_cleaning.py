@@ -20,20 +20,20 @@ def weekly_clean(week):
 
 
 def evaluate(week):
-    def to_date(string):
-        el = string.astype(str)
+    def to_date(game_id):
+        el = str(game_id)
         return '-'.join([el[:4], el[4:6], el[6:8]])
 
     weeks_predictions = pd.read_csv(f'DATA/Predictions/Predictions_Week_{week}.csv')
     weeks_predictions['game_date'] = pd.to_datetime(weeks_predictions.game_id.apply(to_date))
 
-    full = pd.read_csv('DATA/master/NFL.csv', parse_dates='game_date')
+    full = pd.read_csv('DATA/master/NFL.csv', parse_dates=['game_date'])
 
     # gives us one row per game (instead of one row for each team)
-    sub = full[full.home_team==full.team,['game_date', 'home_team', 'away_team', 'total_home_score',
-                                          'total_away_score', 'team', 'team_score', 'opponent']]
+    sub = full.loc[full.home_team == full.team,['game_date', 'home_team', 'away_team', 'total_home_score',
+                                            'total_away_score', 'team', 'team_score', 'opponent']]
 
-    joined = pd.merge(weeks_predictions, sub, on=['game_date','home_team','away_team'])
+    joined = weeks_predictions.merge(sub, on=['game_date'])
 
     # TODO apply a win or not function, write to results folder
     def win_lose(df):
@@ -49,7 +49,7 @@ def evaluate(week):
                 return 0
 
 
-    return joined
+    return sub
 
 
 
