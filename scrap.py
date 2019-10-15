@@ -21,6 +21,10 @@ def auto(week):
     # week is the week I want to PREDICT
     weekly_clean(int(week)-1)
     fill.fill_predictions(int(week))
+    # fill bets
+
+    # evaluate last week
+    # write results to totals
     print('done')
 
 def write_bets():
