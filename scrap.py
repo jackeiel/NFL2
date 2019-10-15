@@ -1,7 +1,7 @@
 from glob import glob
 import pandas as pd
 
-from data_cleaning.weekly_cleaning import weekly_clean
+from data_cleaning.weekly_cleaning import weekly_clean, evaluate
 from models import fill
 
 def data_init():
@@ -20,11 +20,13 @@ def data_init():
 def auto(week):
     # week is the week I want to PREDICT
     weekly_clean(int(week)-1)
+    # fills predictions and bets
     fill.fill_predictions(int(week))
-    # fill bets
 
     # evaluate last week
+    evaluate(int(week)-1)
     # write results to totals
+    fill.write_results(int(week)-1)
     print('done')
 
 def write_bets():

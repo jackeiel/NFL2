@@ -32,7 +32,7 @@ def fill_predictions(week):
                                                    'week'])
 
     #TODO implement 'bet' algo
-    new['bets'] = new.apply(fill_bets(new))
+    new['bets'] = new.apply(fill_bets, axis=1)
 
     new.to_csv('./DATA/Predictions/Predictions_Week_' + str(week)+'.csv')
 
@@ -57,7 +57,6 @@ def write_results(week):
     wins = result.win_bet.sum()
 
     totals = pd.read_csv('DATA/Results/totals.csv', index_col=0)
-
 
     row = pd.Series([week, wins, total, wins / total, 0])
     totals.loc[week] = row.values

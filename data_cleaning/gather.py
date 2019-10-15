@@ -23,11 +23,11 @@ def get_lines():
 
     week = soup.find('h1').text.strip().split('Week')[-1]
 
-    home_spread = [game.find('table').find_all('br')[0].next_sibling for game in westgate]
+    home_spread = [float(game.find('table').find_all('br')[0].next_sibling) for game in westgate]
     home_odds = [game.find('table').find_all('br')[1].next_sibling for game in westgate]
     home_team = [team.split(':')[0] for team in home_odds]
 
-    away_spread = [game.find('table').find_all('br')[0].previous_sibling for game in westgate]
+    away_spread = [float(game.find('table').find_all('br')[0].previous_sibling) for game in westgate]
     away_odds = [game.find('table').find_all('br')[1].previous_sibling for game in westgate]
     away_team = [team.split(':')[0] for team in away_odds]
 
