@@ -1,18 +1,13 @@
 ### NFL Score Predictions
 
-Weekly pick found in ./DATA/Results
+**Current Record Against the Spread**  
+39 - 20
 
-#### Record  
-Week 3 Picks Available  
-  
-**Overvall for 2019 Season (through Week 2)**  
-20 - 11  
-*Week 2*  
-9 - 6 (excluded NYJ game w/ Darnold out)  
-*Week 1*  
-11 - 5  
+Plots found in fig/  
+Weekly picks found in DATA/Predictions/  
+Outcomes found in DATA/Results/  
 
-For current predictions: 
+For most up to date predictions: 
 
 Run
 
@@ -22,7 +17,7 @@ Run
 
 `>>> from models.scores import ScorePrediction`  
 `>>> guess = ScorePrediction()`  
-`>>> guess.get_predictions(home_team='DAL', away_team='GB')`
+`>>> guess.get_predictions(home_team='DAL', away_team='NYG')`
 
 
 

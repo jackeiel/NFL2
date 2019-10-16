@@ -2,6 +2,7 @@ from glob import glob
 import pandas as pd
 
 from data_cleaning.weekly_cleaning import weekly_clean, evaluate
+from data_cleaning.plotting import plot_results
 from models import fill
 
 def data_init():
@@ -27,6 +28,7 @@ def auto(week):
     evaluate(int(week)-1)
     # write results to totals
     fill.write_results(int(week)-1)
+    plot_results(week)
     print('done')
 
 def write_bets():
