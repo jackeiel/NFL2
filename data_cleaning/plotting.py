@@ -24,7 +24,8 @@ def plot_results(week):
 
     ax[1].bar(index, totals.total_bets, width=width, label='Total Bets')
     ax[1].bar(index, totals.wins, width=width, label='Wins')
-    ax[1].set_xlabel('Number of Bets Each Week', fontsize=16)
+    ax[1].set_ylabel('Number of Bets Each Week', fontsize=16)
+    ax[1].set_xlabel('Week')
     ax[1].set_ylim(0,16)
     ax[1].legend()
 

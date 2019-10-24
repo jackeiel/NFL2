@@ -28,7 +28,7 @@ def auto(week):
     evaluate(int(week)-1)
     # write results to totals
     fill.write_results(int(week)-1)
-    plot_results(week)
+    plot_results(week-1)
     print('done')
 
 def write_bets():
