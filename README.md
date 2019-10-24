@@ -1,7 +1,7 @@
 ### NFL Score Predictions
 
 **Current Record Against the Spread**  
-39 - 20
+**45 - 26**  
 
 Plots found in fig/  
 Weekly picks found in DATA/Predictions/  
