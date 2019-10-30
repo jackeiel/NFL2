@@ -2,7 +2,7 @@ setwd("~/Python/NFL2/DATA/R")
 
 library(nflscrapR)
 ids = scrape_game_ids(2019)
-week = 7
+week = 8
 
 week_games = ids[ids$week==week,]
 pbp = data.frame()
