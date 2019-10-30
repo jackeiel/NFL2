@@ -17,7 +17,10 @@ Run
 
 `>>> from models.scores import ScorePrediction`  
 `>>> guess = ScorePrediction()`  
-`>>> guess.get_predictions(home_team='DAL', away_team='NYG')`
+`>>> guess.get_predictions(home_team='DAL', away_team='NYG')`  
+  home_team--away_team--predicted_home_score--predicted_away_score--predicted_spread---model  
+0-----DAL-------NYG---------26.956206------------17.259805-------------9.696401-------model2
+  
 
 
 
