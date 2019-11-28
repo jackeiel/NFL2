@@ -19,7 +19,7 @@ def get_lines():
     soup = BeautifulSoup(res.content, 'html.parser')
     table = soup.find('table')
     rows = table.find_all('tr')
-    westgate = [row for row in rows if row.find('td').text == 'Westgate']
+    westgate = [row for row in rows if row.find('td').text == 'Caesars']
 
     week = soup.find('h1').text.strip().split('Week')[-1]
 
