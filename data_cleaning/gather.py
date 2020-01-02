@@ -21,7 +21,7 @@ def get_lines():
     rows = table.find_all('tr')
     westgate = [row for row in rows if row.find('td').text == 'Caesars']
 
-    week = soup.find('h1').text.strip().split('Week')[-1]
+    week = 18 #soup.find('h1').text.strip().split('Week')[-1]
 
     # handles cases of EVEN odds or NA
     def home_internal_spread(game):
