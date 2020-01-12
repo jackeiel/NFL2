@@ -1,0 +1,5 @@
+,game_id,week,home_team,predicted_home_score,away_team,predicted_away_score,predicted_spread,vegas_line_home,home_odds,vegas_line_away,away_odds,bets
+0,2020011100,19,SF,24.65385227,MIN,24.12099829,-0.532853983,-7,-116,7,-105,MIN
+1,2020011101,19,BAL,25.4685894,TEN,20.49581186,-4.972777548,-10,-111,10,-111,TEN
+2,2020011200,19,KC,26.72641506,HOU,15.36187412,-11.36454094,-10,-110,10,-110,--
+3,2020011201,19,GB,22.33617904,SEA,17.22197711,-5.114201933,-4,-110,4,-110,--

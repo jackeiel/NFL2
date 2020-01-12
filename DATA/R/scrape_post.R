@@ -1,15 +1,17 @@
 setwd("~/Python/NFL2/DATA/R")
 
 library(nflscrapR)
-ids = scrape_game_ids(2019)
-week = 13
+# ids = scrape_game_ids(2019)
+week = 18
+
+ids = read.csv(file=paste('../Predictions/Predictions_Week_', week, '.csv', sep=''))
 
 week_games = ids[ids$week==week,]
 pbp = data.frame()
 for (game in week_games$game_id){
 pbp = rbind(pbp, scrape_game_play_by_play(game, 'post', 2019)) # post??
 }
-name = paste('../play_by_play_data/post_season/2019/post_pbp_week_', week, sep='') # reg -> post (does this mess with finding/writing the files?)
+name = paste('../play_by_play_data/regular_season/2019/reg_pbp_week_', week, sep='') # reg -> post (does this mess with finding/writing the files?)
 name = paste(name,'.csv', sep='')
 write.csv(pbp, name)
 print('done gathering play-by-play data')
