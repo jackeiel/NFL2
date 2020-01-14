@@ -2,7 +2,7 @@ setwd("~/Python/NFL2/DATA/R")
 
 library(nflscrapR)
 # ids = scrape_game_ids(2019)
-week = 18
+week = 19
 
 ids = read.csv(file=paste('../Predictions/Predictions_Week_', week, '.csv', sep=''))
 
