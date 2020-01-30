@@ -12,10 +12,12 @@ def fill_predictions(week):
     guess = ScorePrediction()
     print('predicting games')
 
-    printout = pd.concat([guess.get_predictions(home, away) for (home, away) in
-                          zip(week_games.home_team, week_games.away_team)])
 
-    printout.index = range(0,len(week_games))
+    printout = pd.concat([guess.get_predictions(home, away) for (home, away) in
+                      zip(week_games.home_team, week_games.away_team)])
+    printout.index = range(0, len(week_games))
+
+
     print(printout)
 
     week_games.loc[:,'predicted_home_score'] = printout['predicted_home_score'].values

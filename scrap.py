@@ -20,7 +20,7 @@ def data_init():
 
 def auto(week):
     # week is the week I want to PREDICT
-    weekly_clean(int(week)-1)
+    # weekly_clean(int(week)-1)
     # fills predictions and bets
     fill.fill_predictions(int(week))
 
