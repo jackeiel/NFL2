@@ -1,0 +1,5 @@
+,game_id,game_date,week,home_team,predicted_home_score,away_team,predicted_away_score,predicted_spread,vegas_line_home,bets,total_home_score,total_away_score,win_bet
+0,2020011100,2020-01-11,19,SF,24.65385227,MIN,24.12099829,-0.532853983,-7,MIN,27,10,0.0
+1,2020011101,2020-01-11,19,BAL,25.468589399999995,TEN,20.49581186,-4.972777548,-10,TEN,12,28,1.0
+2,2020011200,2020-01-12,19,KC,26.72641506,HOU,15.36187412,-11.36454094,-10,--,51,31,
+3,2020011201,2020-01-12,19,GB,22.33617904,SEA,17.22197711,-5.114201933,-4,--,28,23,
